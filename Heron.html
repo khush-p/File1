@@ -51,12 +51,17 @@
         top: 10px;
         border-radius: 60px;
       }
+      #tit{
+        text-align:center;
+        font-size:25px;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Heron's Formula</title>
   </head>
   <body>
+    <h1 id="tit" > hERON's fORMULA</h1>
     <div class="main">
       <div class="heron">
         <input
@@ -97,7 +102,7 @@
         const c = s - sidec;
         const area = Math.sqrt(s * a * b * c);
         let answer = `<h1 style="text-align:center ; font-family:helvetica; font-size:30px; "> The Area Of The Triangle is ${area} </style></h1>`;
-
+        alert(answer);
         document.body.innerHTML = answer;
         // document.body.innerHTML = re;
       }
