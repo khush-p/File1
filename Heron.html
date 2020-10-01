@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .main {
+        width: 100%;
+        height: auto;
+      }
+      .heron {
+        background-color: white;
+        /* box-shadow: 1pc 1pc 15px rgba(0, 0, 0, 0.5); */
+        box-shadow: 0.9pc 0.7pc 30px rgba(0, 0, 0, 0.5);
+        width: 348px;
+        height: 285px;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        position: relative;
+        top: 45px;
+        left: 290px;
+        border-radius: 10px;
+      }
+      .heron input {
+        color: black;
+        font-size: 20px;
+        font-family: Helvetica;
+        width: 288px;
+        height: 50px;
+        text-transform: uppercase;
+        font-weight: bolder;
+        /* align-items: center; */
+        align-self: center;
+        text-align: center;
+        border: none;
+      }
+      #side1 {
+        position: relative;
+        top: 10px;
+      }
+      #side2 {
+        position: relative;
+        top: 10px;
+      }
+      #side3 {
+        position: relative;
+        top: 10px;
+      }
+      #find {
+        border: 2pt solid black;
+        position: relative;
+        top: 10px;
+        border-radius: 60px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="heron">
+        <input
+          type="number"
+          name="num"
+          id="side1"
+          placeholder="Enter Side A"
+          required
+        />
+        <hr />
+        <input
+          type="number"
+          name="num"
+          id="side2"
+          placeholder="Enter Side B"
+          required
+        />
+        <hr />
+        <input
+          type="number"
+          name="num"
+          id="side3"
+          placeholder="Enter Side C"
+          required
+        />
+        <hr />
+        <input type="button" value="Find" id="find" onclick="heronsformula()" />
+      </div>
+    </div>
+    <script>
+      function heronsformula() {
+        const sidea = Number(document.querySelector("#side1").value);
+        const sideb = Number(document.querySelector("#side2").value);
+        const sidec = Number(document.querySelector("#side3").value);
+        const s = (sidea + sideb + sidec) / 2;
+        const a = s - sidea;
+        const b = s - sideb;
+        const c = s - sidec;
+        const area = Math.sqrt(s * a * b * c);
+        let answer = `<h1 style="text-align:center ; font-family:helvetica; font-size:30px; "> The Area Of The Triangle is ${area} </style></h1>`;
+
+        document.body.innerHTML = answer;
+        // document.body.innerHTML = re;
+      }
+    </script>
+  </body>
+</html>
